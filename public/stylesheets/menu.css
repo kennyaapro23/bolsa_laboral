@@ -1,0 +1,174 @@
+
+.wrapper {
+    width: 80%;
+    margin: auto;
+    overflow:hidden;
+  }
+  header {
+    background: rgba(0,0,0,0.9);
+    width: 100%;
+    position: fixed;
+    z-index: 20;
+  }
+  
+
+.top-bar .nav-item {
+    display: inline-block;  
+    
+  }
+  
+  nav {
+    padding: 0px;
+  
+  }
+  
+  nav.top-bar-wrap {
+    background: red;
+  }
+  
+  .top-bar-wrap {
+    height: 40px;
+    line-height: 40px;
+  }
+  
+  .main-nav-wrap {
+    height: 80px;
+    line-height: 80px;
+  }
+  
+  nav.main-nav-wrap {
+    background: red;
+    font-size: 1.25rem ;
+    border-bottom: 6px solid white;
+    margin-right: 60px;
+    
+
+  }
+  
+  nav.top-bar-wrap ul,
+  nav.main-nav-wrap ul {
+    margin-bottom: 0px;
+    margin-top: 0px
+  }
+  
+  a.nav-link:hover {
+    background: white;
+    color: black;
+    border-left: 1px solid white;
+  }
+  
+  a.nav-link {
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    color: white;
+    text-transform: uppercase;
+    font-family: '
+    Rubik',
+    sans-serif;
+    transform: skew(-25deg);
+    transition: all 400ms ease-out
+  }
+  
+  a .inner-link {
+    display: inline-block;
+    transform: skew(25deg)
+  }
+  
+  .nav-link {
+    padding: 0px;
+  }
+  
+  .top-bar-wrap a {
+    padding-left: 12px;
+  }
+  
+  .main-nav-wrap a {
+    padding-left: 18px;
+    padding-top: 0%;
+  }
+  
+  .brand-logo img {
+    height: 40px;
+    transform: skew(25deg)
+  }
+  
+  .brand-phone a {
+    display: block;
+    font-size: 1.25em;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+    height: 40px;
+    line-height: 1.5em;
+    transform: skew(25deg)
+  }
+  
+  .brand-phone,
+  .brand-logo {
+    padding: 40px;
+    position: absolute;
+    top: 0;
+    height: 120px;
+  
+    transform: skewX(-25deg);
+  }
+  
+  .brand-logo {
+    left: -30px;
+    padding-left: 70px;
+    background: red;
+    border-right: 5px solid white;
+    border-bottom: 5px solid white;
+    
+  
+  }
+  
+  .brand-phone {
+    right: 0;
+    
+    right: -30px;
+    padding-right: 70px;
+    background:  red;
+    border-left: 6px solid white;
+    border-bottom   : 6px solid white;
+
+  }
+  /* Estilos responsivos */
+  @media (max-width: 767px) {
+    .top-bar-wrap,
+    .main-nav-wrap,
+    .brand-logo,
+    .brand-phone {
+      height: auto;
+      line-height: normal;
+      transform: none;
+      padding: 10px;
+    }
+
+  
+    .brand-logo img {
+      height: 30px;
+    }
+  
+    .brand-phone a {
+      height: auto;
+      line-height: normal;
+      font-size: 1em;
+    }
+  
+    .nav-link {
+      padding: 0 10px;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    }
+  
+    .top-bar-wrap a {
+      padding-left: 10px;
+    }
+  
+    .main-nav-wrap a {
+      padding-left: 15px;
+    }
+  }
+   

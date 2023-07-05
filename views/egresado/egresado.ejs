@@ -1,0 +1,178 @@
+<%- include('../partials/header'); %>
+
+<main> 
+ 
+  <div class="card">
+    <div class="face front">
+        <img src="/images/estudiante.jpeg" alt="">
+        <h3>LISTA DE OFERTAS LABORALES</h3>
+    </div>
+    <div class="face back">
+        <h3>VER OFERTAS LABORALES</h3>
+    
+        <div class="link">
+            <a href="/login" class="btn btn-info">INGRESAR</a>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="face front">
+        <img src="/images/docente.jpg" alt="">
+        <h3>SUBIR TU CV </h3>
+    </div>
+    <div class="face back">
+        <h3>SUBIR TU CV</h3>
+        <p>Un docente va más allá de planificar lecciones informativas. De hecho,
+          muchas veces los maestros se transforman en padres o madres para 
+          los estudiantes debido a la cantidad de 
+          tiempo que los alumnos pasan en el instituto educativo.</p>
+        <div class="link">
+           <button  class="btn btn-info data-modal-target="authentication-modal" data-modal-toggle="authentication-modal">INGRESAR</button>
+
+        </div>
+    </div>
+</div>
+
+</main>
+
+<button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"  type="button" class="btn btn-info scroll-pl-6">
+SUBIR TU CV </button>
+
+  
+  <!-- Main modal -->
+<div id="authentication-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div class="relative w-full max-w-md max-h-full">
+<!-- Modal content -->
+<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+    <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="authentication-modal">
+        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        <span class="sr-only">Close modal</span>
+    </button>
+    <div class="px-6 py-6 lg:px-8">
+        <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Crea cuenta de egresado</h3>
+        <form class="space-y-6" action="/egresado/egresado-add" method="post">
+            <div>
+              <label for="nombres" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombres</label>
+              <input type="text" name="nombres" id="nombres" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Juan Carlos" required>
+            </div>
+            <div>
+              <label for="apellidos" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellidos</label>
+              <input type="text" name="apellidos" id="apellidos" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Perez Perez" required>
+            </div>
+            <div>
+              <label for="dni" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">DNI</label>
+              <input type="text" name="dni" id="dni" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="05689457" required>
+            </div>
+            <div>
+              <label for="fecha" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Fecha de nacimiento</label>
+              <input type="date" name="fecha" id="fecha" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+            </div>
+            <div>
+              <label for="genero" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Genero</label>
+              <select name="genero" id="genero" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                <option>Seleccione opción</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Fenemino">Fenemino</option>
+              </select>
+            </div>
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo electrónico</label>
+                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required>
+            </div>
+
+            <div>
+              <form action="procesar_archivo.php" method="post" enctype="multipart/form-data">
+                <label for="archivo">Subir su CV</label>
+                <input type="file" id="archivo" name="archivo" required>
+            
+              </form>
+            </div>
+
+            <br> <br>
+            
+
+            <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Registrarse</button>
+            
+        </form>
+    </div>
+</div>
+</div>
+</div>
+      
+      <footer class="bg-light text-center text-dark pt-5 pb-4">
+          <div class="container text-center text-md-start">
+              <div class="row text-center text-md-start">
+                  
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                      <h5 class="text-uppercase mb-4 font-weight-bold text-light">Nosotros</h5>
+                      <hr class="mb-4">
+                      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ducimus 
+                        optio velit impedit alias pariatur at, dolore aliquid consequuntur 
+                        perferendis non deleniti qui odit iure laudantium illum saepe, obcaecati 
+                        nam.
+                      </p>
+
+                  </div>
+                  
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-light">Dejanos ayudarte</h5>
+                    <hr class="mb-4">
+                    <p> <a href="" class="text-dark">Tu cuenta</a></p>
+                    <p> <a href="" class="text-dark">Tus ordenes</a></p>
+                    <p> <a href="" class="text-dark">Manejo de cuenta</a></p>
+                    <p> <a href="" class="text-dark">Ayuda</a></p>
+
+                  </div>
+
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-light">INS CRUCERO</h5>
+                    <hr class="mb-4">
+                    <p> <a href="" class="text-dark">999 888 900</a></p>
+                    <p> <a href="" class="text-dark">Anuncios </a></p>
+                    <p> <a href="" class="text-dark">Afiliado</a></p>
+                    <p> <a href="" class="text-dark">Publica</a></p>
+
+                  </div>
+
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-light">INS CRUCERO</h5>
+                    <hr class="mb-4">
+                    <p> <li class="fas fa-home me-3"></li> Peru-Puno-Carabaya</p>
+                    <p> <li class="fas fa-envelope me-3"></li> inscrucero@gamil.com</p>
+                    <p> <li class="fas fa-phone me-3"></li>+987654321</p>
+                    <p> <li class="fas fa-print me-3"></li>+923672362</p>
+                
+                  </div>
+                  <hr class="mb-4">
+                  <div class="text-center mb-2">
+                    <p>Copyright Todo los derechos reservados <a href=""> <strong>Test</strong></a></p>
+                  </div>
+
+                  <div class="text-center">
+                    <ul class="list-unstyled-item">
+                      <li class="list-inline-item"><a href="" class="text-dark"><i class="fab fa-facebook"></i></a></li>
+                      <li class="list-inline-item"><a href="" class="text-dark"><i class="fab fa-twitter"></i></a></li>
+                      <li class="list-inline-item"><a href="" class="text-dark"><i class="fab fa-google-plus"></i></a></li>
+                      <li class="list-inline-item"><a href="" class="text-dark"><i class="fab fa-linkedin-in"></i></a></li>
+                      <li class="list-inline-item"><a href="" class="text-dark"><i class="fab fa-youtube"></i></a></li>
+
+                    </ul>
+
+                  </div>
+                  
+              
+              
+              
+              
+                </div>            
+          </div>
+      </footer>
+     
+    
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="../bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+      <script src="../javascripts/bootstrap.bundle.min.js"></script>
