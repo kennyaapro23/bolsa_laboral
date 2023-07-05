@@ -27,7 +27,7 @@ router.post('/login', function(req, res, next) {
         
         var rol = rows[0].us_rol;
         if (rol ===1 ) {
-          res.redirect("/institucion/administracion"); // Redirecciona a la página de administración si el rol es igual a 1
+          res.redirect("/institucion/index"); // Redirecciona a la página de administración si el rol es igual a 1
         } else if (rol === 2  ) {
           res.redirect("/egresado/egresado-add"); // Redirecciona a la página de categorías si el rol es igual a 2
         } else if (rol === 3) {
@@ -46,10 +46,10 @@ router.post('/login', function(req, res, next) {
   });
 });
 
-router.get('/institucion/administracion', function(req, res, next) {
+router.get('/institucion/index', function(req, res, next) {
   var rol = req.session.rol;
   if (rol === 1) {
-    res.render('institucion/administracion'); // Renderiza la vista de categorías para el administrador desde la carpeta "oferta/admin"
+    res.render('institucion/index'); // Renderiza la vista de categorías para el administrador desde la carpeta "institucion"
   } else {
     console.log("Acceso no autorizado");
     res.redirect("/login");

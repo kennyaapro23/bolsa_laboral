@@ -4,7 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var multer = require('multer');
 var flash = require('express-flash');
 var session = require('express-session');
 var mysql = require('mysql');
@@ -13,6 +12,7 @@ var connection  = require('./lib/db');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var egresadoRouter = require('./routes/egresado');
+var institucionRouter = require('./routes/institucion');
 
 var app = express();
 
@@ -39,6 +39,7 @@ app.use(flash());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/egresado', egresadoRouter);
+app.use('/institucion', institucionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
