@@ -11,8 +11,12 @@ var connection  = require('./lib/db');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var empresaRouter = require('./routes/empresa');
+var docenteRouter = require('./routes/docente');
 var institucionRouter = require('./routes/institucion');
+var egresadoRouter = require('./routes/egresado');
+
+
 
 var app = express();
 
@@ -26,19 +30,25 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const oneDay = 1000 * 60 * 60 * 24;
 app.use(session({ 
-  cookie: { maxAge: 60000 },
-  store: new session.MemoryStore,
-  saveUninitialized: true,
-  resave: 'true',
-  secret: 'secret'
+    cookie: { maxAge:  oneDay},
+    store: new session.MemoryStore,
+    saveUninitialized: true,
+    resave: 'false',
+    secret: 'SSDFSDXCVSDFSDF3453453452434'
 }))
 
-app.use(flash());
 
+app.use(flash());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/empresa', empresaRouter);
+app.use('/docente', docenteRouter);
 app.use('/institucion', institucionRouter);
+app.use('/egresado', egresadoRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

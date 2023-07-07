@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | General Form Elements</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -12,6 +13,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 </head>
+
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
   <!-- Navbar -->
@@ -189,26 +191,22 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
-         
             <li class="nav-item">
-              <a href="../admin" class="nav-link">
+              <a href="/institucion" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
-                  
                 </p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="categorias" class="nav-link">
+              <a href="institucion" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   Categorias
-                  
                 </p>
               </a>
-            </li>
-           
+            </li>          
           </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -223,7 +221,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>General Form</h1>
+            <h1>Nueva categoría</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -240,36 +238,74 @@
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-6">
+          <div class="col-md-12">
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">datos de la Caregoria</h3>
+                <h3 class="card-title">Datos de la categoría</h3>
               </div>
               <!-- /.card-header -->
-              <!-- form start -->
-              <form action ="../categorias-edit/<%=id%>" method="POST">
+              
+              <form action="../institucion-edit/<%=id%>" method="post">
                 <div class="card-body">
+
                   <div class="form-group">
-                    <label >Nombre categoria</label>
-                    <input name="nombre" value="<%=nombre%>" type="text" class="form-control" id="exampleInputEmail1" placeholder="Imgrese nombre">
+                    <label>Fecha de inicio de labores</label>
+                    <input name="fl" value="<%=fl%>" type="text" class="form-control" placeholder="Ingrese el titulo">
                   </div>
+
                   <div class="form-group">
-                    <label for="exampleInputPassword1">descripcion</label>
-                  
-                    <textarea name="descripcion" id="" cols="30" rows="5" class="form-control">Ingrese descripcion<%=descripcion%></textarea>
+                    <label>Inicio de convocatoria</label>
+                    <input name="fi" value="<%=fi%>" type="text" class="form-control" placeholder="Ingrese el titulo">
                   </div>
-                  
+
+                  </div> <div class="form-group">
+                    <label>Fin de convocatoria</label>
+                    <input name="fc" value="<%=fc%>" type="text" class="form-control" placeholder="Ingrese el titulo">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Titulo</label>
+                    <input name="titulo" value="<%=titulo%>" type="text" class="form-control" placeholder="Ingrese el titulo">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Descripción</label>                    
+                    <textarea name="descripcion" cols="30" rows="5" class="form-control" placeholder="Ingrese descripción"><%=descripcion%></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Horario</label>                    
+                    <input name="horario" value="<%=horario%>" type="text" class="form-control" placeholder="Ingrese el titulo">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Salario</label>                    
+                    <input name="salario" value="<%=salario%>" type="text" class="form-control" placeholder="Ingrese el titulo">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Estado</label>                    
+                    <input name="estado" value="<%=estado%>" type="text" class="form-control" placeholder="Ingrese el titulo">
+                  </div>
+
+                  <div class="form-group"> 
+                    <label>Empresa</label>                    
+                    <input name="empresa" value="<%=empresa%>" type="text" class="form-control" placeholder="Ingrese el titulo">
+                  </div>
                 </div>
                 <!-- /.card-body -->
-
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Actualizar</button>
-                  <a href="../categorias" class="btn btn-secondary">Cancelar</a>
+                  <a href="../institucion" class="btn btn-secondary">Cancelar</a>
                 </div>
               </form>
             </div>
             <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>

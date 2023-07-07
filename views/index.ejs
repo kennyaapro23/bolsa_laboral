@@ -2,7 +2,7 @@
 <%- include('partials/header'); %>
 
   <section class="home">
-    <div id="carousel" class="carousel slide" data-ride="carousel">
+|    <div id="carousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-controls">
 
     </div>
@@ -47,6 +47,7 @@
           </div>
       </div>
   </div>
+  
 
   <div class="card">
       <div class="face front">
@@ -82,6 +83,31 @@
   </div>
    
 </div>
+
+
+
+<h1 class="bg-indigo-600 text-xl text-center font-bold mt-4 text-white">Explora las ofertas laborales que tenemos para ti</h1>
+<!-- Card -->
+<div class="my-4 grid md:grid-cols-4 sm:grid-cols-2 gap-4 px-4">
+  <% for(var i = 0; i< data.length; i++) { %>
+    <div class=" border-2 p-4 w-full rounded-lg ml-4 shadow-xl">
+      <div>
+        <img class="rounded-lg m-auto" src="images/noti.jpg" alt="">
+      </div>
+      <div>
+        <!-- card que se repite teniendo en cuenta la cantidad de ofertas laborales que viene de la base de datos -->
+        <h3 class="text-center bg-indigo-600 text-white my-4 rounded-lg border-b-yellow-400 border-4 text-2xl"><%= data[i].ol_titulo%></h3>
+        <p>Inicio de labores: <%= data[i].ol_fecha_inicio_laborales%></p>
+        <p>Inicio de convocatorias: <%= data[i].ol_fecha_inicio_convocatoria%></p>
+        <p>Fin de convocatorias:    <%= data[i].ol_fecha_fin_convocatoria%></p>
+        <p>Horario de trabajo: <%= data[i].ol_horario%></p>
+        <p>Salario: S/ <%= data[i].ol_salario%></p>
+        <p>Descripcion: <%= data[i].ol_descripcion%></p>
+        
+      </div>
+    </div>
+  <% } %>
+  </div>
 
 <%- include('partials/footer'); %>
 

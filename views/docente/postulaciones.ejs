@@ -1,7 +1,7 @@
 <%- include('../partials/header'); %>
   <!-- Content Wrapper. Contains page content -->
   
- 
+ <br>
   
   <body >
 
@@ -31,7 +31,7 @@
           <div class="col-md-12">
             <div class="card col-md-12">
               <div class="card-header">
-                <h3 class="card-title">LISTA DE OFERTAS LABORALES</h3>
+                <h3 class="card-title">LISTA DE MONITOREO</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
@@ -39,30 +39,21 @@
                   <thead>
                     <tr>
                       <th style="width: 10px">#</th>
-                      <th>Fecha de inicio de labores</th>
-                      <th>Inicio</th>
-                      <th>Fin de convocatoria</th>
-                      <th>Titulo</th>
-                      <th>Descripcion</th>
-                      <th>Horario</th>
-                      <th>Salario</th>
-                      <th>Estado</th>
-                      <th>Empresa</th>
+                      <th>ID Egresado</th>
+                      <th>ID Oferta laboral</th>
+                      <th>Ganador</th>
+                      <th>Puntaje</th>
+                      
                     </tr>
                   </thead>
                   <tbody>
                     <% for(var i = 0; i< data.length; i++) { %>
                     <tr>
                       <td><%= (i+1) %></td>
-                      <td><%= data[i].ol_fecha_inicio_labores%></td>
-                      <td><%= data[i].ol_fecha_inicio_convocatoria%></td>
-                      <td><%= data[i].ol_fecha_fin_convocatoria%></td>
-                      <td><%= data[i].ol_titulo%></td>
-                      <td><%= data[i].ol_descripcion%></td>
-                      <td><%= data[i].ol_horario%></td>
-                      <td><%= data[i].ol_salario%></td>
-                      <td><%= data[i].ol_estado%></td>
-                      <td><%= data[i].ol_ep_id%></td>
+                      <td><%= data[i].pc_eg_id%></td>
+                      <td><%= data[i].pc_ol_id%></td>
+                      <td><%= data[i].pc_ganador%></td>
+                      <td><%= data[i].pc_puntaje%></td>
                       
                     </tr>
                     <% } %>
@@ -81,36 +72,5 @@
 
   </body>
 
-  <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-  <!-- /.content-wrapper -->
-  <%- include('../partials/footer'); %>
+
+  <%- include('../partials/footer'); %>

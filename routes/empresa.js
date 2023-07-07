@@ -3,24 +3,22 @@ var router = express.Router();
 var dbConn  = require('../lib/db');
 
 /* GET home page. */
-router.get('/institucion', function(req, res, next) {
+router.get('/categorias', function(req, res, next) {
     dbConn.query('SELECT * FROM oferta_laboral ORDER BY ol_id desc',function(err,rows){
         if(err) {
             req.flash('error', err);
-            res.render('institucion/institucion',{data:''});   
+            res.render('empresa/categorias',{data:''});   
         }else {
-            res.render('institucion/institucion',{data:rows});
+            res.render('empresa/categorias',{data:rows});
         }
     });
 });
 
-
-
-router.get('/institucion-add', function(req, res, next) {
-    res.render('institucion/institucion-add');
+router.get('/categorias-add', function(req, res, next) {
+    res.render('empresa/categorias-add');
 });
 
-router.post('/institucion-add', function(req, res, next) {
+router.post('/categorias-add', function(req, res, next) {
     
     let fl = req.body.fl;
     let fi = req.body.fi;
@@ -45,28 +43,31 @@ router.post('/institucion-add', function(req, res, next) {
         ol_ep_id: empresa        
     }
 
+
     dbConn.query('INSERT INTO oferta_laboral SET ?', form_data, function(err, result) {
         //if(err) throw err
         if (err) {
             req.flash('error', err)
         } else {                
             req.flash('success', 'categoria registrada satisfactoriamente');
-            res.redirect('../institucion/institucion');
+            res.redirect('../empresa/categorias');
         }
     })
     });
 
-router.get('/institucion-edit/(:id)', function(req, res, next) {
+
+
+router.get('/categorias-edit/(:id)', function(req, res, next) {
     let id = req.params.id;
     //console.log(id);
     dbConn.query('SELECT * FROM oferta_laboral WHERE ol_id='+id,function(err, rows, fields) {
         if(err) throw err
         if (rows.length <= 0) {
             req.flash('error', 'Ninguna categoria tiene el id = '+id)
-            res.redirect('institucion/institucion')
+            res.redirect('empresa/categorias')
         }
         else {
-            res.render('institucion/institucion-edit', {
+            res.render('empresa/categorias-edit', {
                 id: rows[0].ol_id,
                 fl: rows[0].ol_fecha_inicio_labores,
                 fi: rows[0].ol_fecha_inicio_convocatoria,
@@ -81,7 +82,8 @@ router.get('/institucion-edit/(:id)', function(req, res, next) {
         }
     })
 });
-router.post('/institucion-edit/:id', function(req, res, next) {
+
+router.post('/categorias-edit/:id', function(req, res, next) {
     let id = req.params.id;
     let fl = req.body.fl;
     let fi = req.body.fi;
@@ -109,23 +111,25 @@ router.post('/institucion-edit/:id', function(req, res, next) {
             req.flash('error', err);
         } else {
             req.flash('success', 'Categoria actualizada correctamente');
-            res.redirect('../institucion');
+            res.redirect('../categorias');
         }
     })
     
 });
 
-router.get('/institucion-del/(:id)', function(req, res, next) {
+router.get('/categorias-del/(:id)', function(req, res, next) {
     let id = req.params.id;
     dbConn.query('DELETE FROM oferta_laboral WHERE ol_id='+id,function(err, result) {
         if (err) {
             req.flash('error', err)
-            res.redirect('../institucion')
+            res.redirect('../categorias')
         } else {
             req.flash('success', 'Registro eliminado con ID = ' + id)
-            res.redirect('../institucion')
+            res.redirect('../categorias')
         }
     })
 });
 
 module.exports = router;
+
+

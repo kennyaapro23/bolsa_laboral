@@ -5,7 +5,9 @@
   
   <body >
 
-  
+    
+
+x
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -20,7 +22,9 @@
           <div class="alert alert-danger" role="alert"><%- messages.error %></div>
         <% } %>
         <br>  
-      
+        <div class="text-right">
+          <a href="docente-add" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</a>
+        </div>
       </div><!-- /.container-fluid -->
     </section>
 
@@ -48,6 +52,7 @@
                       <th>Salario</th>
                       <th>Estado</th>
                       <th>Empresa</th>
+                      <th class="text-right">Opciones</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -63,7 +68,10 @@
                       <td><%= data[i].ol_salario%></td>
                       <td><%= data[i].ol_estado%></td>
                       <td><%= data[i].ol_ep_id%></td>
-                      
+                      <td class="text-right">
+                        <a href="docente-edit/<%=data[i].ol_id%>" class="btn btn-secondary"><i class="fas fa-edit"></i></a>
+                        <a href="docente-del/<%=data[i].ol_id%>" onclick="return alert('Estas seguro que deseas eliminar?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                      </td>
                     </tr>
                     <% } %>
                   </tbody>

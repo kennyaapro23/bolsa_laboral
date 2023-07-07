@@ -18,7 +18,7 @@
   }
   
   nav {
-    padding: 0px;
+    padding: 5px;
   
   }
   
@@ -38,20 +38,22 @@
   
   nav.main-nav-wrap {
     background: red;
-    font-size: 1.25rem ;
-    border-bottom: 6px solid white;
-    margin-right: 60px;
-    
+    font-size: 2rem ;
 
+    margin-right: 60px;
+   
+    
   }
   
   nav.top-bar-wrap ul,
   nav.main-nav-wrap ul {
     margin-bottom: 0px;
     margin-top: 0px
+   
   }
   
   a.nav-link:hover {
+    
     background: white;
     color: black;
     border-left: 1px solid white;

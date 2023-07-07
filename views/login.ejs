@@ -17,16 +17,19 @@
           <div class="col-xl-10">
             <div class="card rounded-3 text-black">
               <div class="row g-0">
-                <div class="col-lg-6">
+                <div class="col-lg-6"style="background: #8e9eab;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to top, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to top, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                " >
                   <div class="card-body p-md-5 mx-md-4">
                     <div class="text-center">
-                      <img src="public/images/logo2.png" style="width: 600px; height: 110px" alt="logo"/>
+                      <img src="https://redgestorespublicos.pe/wp-content/uploads/2016/04/MINEDU1.jpg" alt="logo"/>
                       <h3 class="mt-1 mb-5 pb-1" style="color: red">
                         <BR /><b>I.E.S. PUBLICO DE "CRUCERO"</b>
                       </h3>
                     </div>
 
-                    <form action="/login" method="post">
+                    <form action="/login" method="post" ">
                       <p><b>Por favor ingrese su cuenta</b></p>
 
                       <div class="form-outline mb-4">
@@ -35,14 +38,13 @@
                           name="user"
                           id="form2Example11"
                           class="form-control"
-                          placeholder="Correo"
+                          placeholder="Usuario"
                         />
                         <label class="form-label" for="form2Example11"
-                          ><p>Correo</p></label
-                        >
+                          ></label>
                       </div>
 
-                      <div class="form-outline mb-4">
+                      <div class="form-outline mb-3">
                         <input
                           type="password"
                           name="password"
@@ -51,7 +53,7 @@
                           placeholder="Contraseña"
                         />
                         <label class="form-label" for="form2Example22"
-                          ><p>Contraseña</p></label
+                          ></label
                         >
                       </div>
 

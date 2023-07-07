@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Bolsa Laboral
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+  <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+
+
+
+</head>
+
+<%- include('partials/header'); %>
+<body>
+  <!-- Barra de arriba -->
+ 
+
+  <!-- Titulo -->
+  <h1 class="bg-indigo-600 text-xl text-center font-bold mt-4 text-white">Explora las ofertas laborales que tenemos para ti</h1>
+  <!-- Card -->
+  <div class="my-4 grid md:grid-cols-4 sm:grid-cols-2 gap-4 px-4 bg-white">
+    <% for(var i = 0; i< data.length; i++) { %>
+      <div class=" border-2 p-4 w-full rounded-lg ml-4 shadow-xl">
+        <div>
+          <img class="rounded-lg m-auto" src="images/JuanPerez.jfif" alt="">
+        </div>
+        <div>
+          <h3 class="text-center bg-indigo-600 text-white my-4 rounded-lg border-b-yellow-400 border-4 text-2xl"><%= data[i].ol_titulo%></h3>
+          <p>Inicio de labores: <%= data[i].ol_fecha_inicio_laborales%></p>
+          <p>Inicio de convocatorias: <%= data[i].ol_fecha_inicio_convocatoria%></p>
+          <p>Fin de convocatorias:    <%= data[i].ol_fecha_fin_convocatoria%></p>
+          <p>Horario de trabajo: <%= data[i].ol_horario%></p>
+          <p>Salario: S/ <%= data[i].ol_salario%></p>
+          <p>Descripcion: <%= data[i].ol_descripcion%></p>
+          
+        </div>
+      </div>
+    <% } %>
+
+    
+
+<!-- Formulario de crear cuenta -->
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+</body>
+
+</html>
