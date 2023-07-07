@@ -30,7 +30,7 @@ router.post('/categorias-add', function(req, res, next) {
     let estado = req.body.estado;
     let empresa = req.body.empresa;
     
-    
+
     var form_data = {
         ol_fecha_inicio_labores: fl,
         ol_fecha_inicio_convocatoria: fi, 
